@@ -1,3 +1,4 @@
+using ApprovalUtilities.Utilities;
 using NUnit.Framework;
 
 namespace ManyOfOne
@@ -7,12 +8,24 @@ namespace ManyOfOne
         [Test]
         public void Test1()
         {
-            Assert.AreEqual("#1", Merge("#", 1));
+            Assert.AreEqual("#1\n", Merge("#", 1));
+        }
+        [Test, Ignore("Until ready")]
+        public void Test2()
+        {
+            var expected = @"
+                #1
+                #2
+                #3
+                #4
+                #5
+                ".RemoveIndentation();
+            Assert.AreEqual(expected, Merge("#", 1 /*,2,3,4,5*/));
         }
 
         private string Merge(string prefix, int number)
         {
-            return prefix + number;
+            return prefix + number + "\n";
         }
     }
 }
