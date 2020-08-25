@@ -2,10 +2,11 @@
 
 * [ ] In Method
     * [ ] Convert a variable
-    * [ ] Convert a 
-    * [ ] Convert a loop 
-    int i = 1 => int i[] = {1}
-* [ ] print(int i) => print(int... i)
+    * [ ] Convert into loop
+    * [ ] Convert Everything
+* [ ] API
+    * [ ] Change Merge to take multiple numbers
+    print(int i) => print(int... i)
 * [ ] print(int i) => print(Printables i)
 * [ ] print(int i) => print(int i, PrintOptions options = null)
 * [ ] PrintOptions {
