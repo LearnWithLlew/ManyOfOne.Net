@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace ManyOfOne
 {
-    public class _02MethodSignatures
+    public class _02PassingArrays
     {
         [Test]
         public void Test1()

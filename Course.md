@@ -4,17 +4,10 @@
     * [ ] Convert a variable
     * [ ] Convert into loop
     * [ ] Convert Everything
+    * [ ] Do it forwards
 * [ ] API
-    * [ ] Change Merge to take multiple numbers
-    print(int i) => print(int... i)
-* [ ] print(int i) => print(Printables i)
-* [ ] print(int i) => print(int i, PrintOptions options = null)
-* [ ] PrintOptions {
-* [ ] boolean color;
-* [ ] }
-* [ ] ]
-* [ ] print(“Hello World”) 
-* [ ] => 
-* [ ] for (int i=0; i<1; i++) print(“HelloWorld)
-* [ ] ]
-* [ ] Idea => Extreme Fake it till you make it
+    * [ ] Arrays
+        * [ ] Add a second method overload that takes an array
+        * [ ] reduce to a single method
+    * [ ] Objects
+        
