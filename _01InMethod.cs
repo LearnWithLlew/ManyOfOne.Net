@@ -8,11 +8,10 @@ namespace ManyOfOne
         [Test]
         public void Test1()
         {
-
-            Assert.AreEqual("1,2,3,4,", FizzBuzz1());
+            Assert.AreEqual("1,2,3,4,", Numbers());
         }
 
-        private string FizzBuzz1()
+        private string Numbers()
         {
             var output = "";
             var number1 = 1;
