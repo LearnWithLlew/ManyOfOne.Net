@@ -6,26 +6,30 @@ namespace ManyOfOne
     public class _03PassingObects
     {
         [Test]
-        public void Test1()
+        public void Test1HardCodedFormat()
         {
             Assert.AreEqual("#1", Format(1));
         }
         [Test, Ignore("Until ready")]
-        public void Test2()
+        public void Test2AllowForCustomPrefix()
         {
-            Assert.AreEqual("#1", Format(1 /*, ? */));
+            Assert.AreEqual("*1", Format(1 /*, ? */));
         }
         
         [Test, Ignore("Until ready")]
-        public void Test3()
+        public void Test3AllowForCustomPrefixAndSuffix()
         {
             var expected = "#1)";
             Assert.AreEqual(expected, Format(1 /*, ?*/));
         }
 
-        private string Format(int number)
+        private string Format(int number, Options options = null)
         {
             return "#" + number ;
+        }
+
+        private class Options
+        {
         }
     }
 }
