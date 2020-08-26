@@ -10,4 +10,5 @@
         * [ ] Add a second method overload that takes an array
         * [ ] reduce to a single method
     * [ ] Objects
+* [ ] Approvals.verify -> verifyAll
         
