@@ -1,6 +1,7 @@
 using System;
 using ApprovalTests;
 using ApprovalTests.Core;
+using Microsoft.VisualBasic;
 using NUnit.Framework;
 
 namespace ManyOfOne.Examples
@@ -29,6 +30,26 @@ namespace ManyOfOne.Examples
         [Test]
         public void Test2()
         {
+            {
+                void printVariables()
+                {
+                }
+
+                void printMonster(string n)
+                {
+                }
+
+
+                printVariables(); // 0 parameters
+
+                printMonster("Sulley"); // 1 parameter
+                String name = "Sulley"; // 1 value
+
+                String[] team = new[] {"Sulley", "Mike", "Boo"}; // Many values
+
+                Console.WriteLine(name + team);
+
+            }
             {
                 var output = "";
                 var number1 = 1;
@@ -88,7 +109,7 @@ namespace ManyOfOne.Examples
             }
         }
 
-        string Format(int number, Options options = null)
+        string Format(int number, Options options = default)
         {
             return number + " " + options;
         }
@@ -98,13 +119,13 @@ namespace ManyOfOne.Examples
         {
             return Format(number, Options.withPrefix(prefix));
         }
-
+        
 
         class Options
         {
             public static Options withPrefix(string prefix)
             {
-                return null;
+                return new Options();
             }
         }
     }
