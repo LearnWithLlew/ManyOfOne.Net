@@ -10,6 +10,11 @@ namespace ManyOfOne
         {
             Assert.AreEqual("#1\n", Merge("#", 1));
         }
+     
+        private string Merge(string prefix, int number)
+        {
+            return prefix + number + "\n";
+        }
         [Test, Ignore("Until ready")]
         public void Test2()
         {
@@ -23,9 +28,5 @@ namespace ManyOfOne
             Assert.AreEqual(expected, Merge("#", 1 /*,2,3,4,5*/));
         }
 
-        private string Merge(string prefix, params int[] number)
-        {
-            return prefix + number[0] + "\n";
-        }
     }
 }
