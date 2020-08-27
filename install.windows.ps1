@@ -1,5 +1,5 @@
 # To run this script directly, run this in an elevated admin PowerShell prompt:
-#     Invoke-WebRequest -UseBasicParsing https://gist.githubusercontent.com/JayBazuzi/296db9c7ecc15dad0f12287293b11125/raw/setup.ps1 | Invoke-Expression
+#     Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/LearnWithLlew/ManyOfOne/master/install.windows.ps1 | Invoke-Expression
 
 iwr -useb cin.st | iex
 choco feature enable --name=allowGlobalConfirmation
@@ -9,6 +9,9 @@ cinst notepadplusplus beyondcompare
 cinst visualstudio2019professional visualstudio2019-workload-manageddesktop netfx-4.8-devpack
 cinst resharper-ultimate-all ncrunch-vs2019
 cinst anydesk
+cinst dotnetcore-sdk
+
+dotnet tool install --global DiffEngineTray --version 5.0.0-beta.6
 
 # delete annoying Windows notification sounds
 Remove-Item -Recurse HKCU:\AppEvents\Schemes
@@ -25,9 +28,10 @@ Set-Service Audiosrv -StartupType Automatic
     'vscode-icons-team.vscode-icons'
 ) | % { & "C:\Program Files\Microsoft VS Code\bin\code.cmd" --install-extension $_ }
 
-& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/refactoring-pipelines/Pipelines.git C:\Source\Pipelines
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/ManyOfOne.git C:\Source\ManyOfOne
+& "C:\Program Files\Git\cmd\git.exe" clone https://github.com/LearnWithLlew/ManyOfOne.slides.git C:\Source\ManyOfOne.slides
 
-& "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe" /verbosity:minimal C:\Source\Pipelines\Pipelines.sln /target:restore,build
+& "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe" /verbosity:minimal C:\Source\ManyOfOne\ManyOfOne.sln /target:restore,build
 
 $ProgressPreference = 'SilentlyContinue'
 $mobtimeVersion = '1.7.4'
