@@ -67,45 +67,45 @@ namespace ManyOfOne.Examples
 
                 Console.WriteLine(Merge("#", 1));
             }
-        }
 
-        {
-            string Format(int number)
             {
-                return number + " ";
+                string Format(int number)
+                {
+                    return number + " ";
+                }
+
+                Console.WriteLine(Format(1));
             }
 
-            Console.WriteLine(Format(1));
-        }
-        {
-            
-            string Format(int number, Options options = null)
             {
-                return number + " " + options;
-            }
+                var result = MethodUnderTest(1);
+                Approvals.Verify(result);
 
-            string Format(int number, string prefix)
+                var forValues = new[] {1};
+                Approvals.VerifyAll("MethodUnderTest",
+                    forValues,
+                    n => $"{n} => {MethodUnderTest(n)}");
+            }
+        }
+
+        string Format(int number, Options options = null)
+        {
+            return number + " " + options;
+        }
+
+
+        string Format(int number, string prefix)
+        {
+            return Format(number, Options.withPrefix(prefix));
+        }
+
+
+        class Options
+        {
+            public static Options withPrefix(string prefix)
             {
-                return Format(number, Options.withPrefix(prefix));
+                return null;
             }
-
-            Console.WriteLine(Format(1, "#"));
-        }
-        {
-            var result = MethodUnderTest(1);
-            Approvals.Verify(result);
-
-            var forValues = new[] {1};
-            Approvals.VerifyAll("MethodUnderTest",
-                forValues,
-                n => $"{n} => {MethodUnderTest(n)}");
-        }
-    }
-    class Options
-    {
-        public static Options withPrefix(string prefix)
-        {
-            return null;
         }
     }
 }
