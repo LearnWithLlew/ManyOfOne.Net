@@ -14,7 +14,7 @@ namespace ManyOfOne
         {
             int[] numbers = new []{1};
             var result = FizzBuzz(numbers[0]);
-            Approvals.Verify(result);
+            Approvals.VerifyAll("FizzBuzz", numbers, n => FizzBuzz(n));
         }
 
         private string FizzBuzz(int number)
