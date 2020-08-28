@@ -10,10 +10,10 @@ namespace ManyOfOne
         {
             Assert.AreEqual("#1", Format(1));
         }
-        [Test, Ignore("Until ready")]
+        [Test]
         public void Test2AllowForCustomPrefix()
         {
-            Assert.AreEqual("*1", Format(1 /*, ? */));
+            Assert.AreEqual("*1", Format(1, new Options() { Prefix = "*"}));
         }
         
         [Test, Ignore("Until ready")]
@@ -30,8 +30,13 @@ namespace ManyOfOne
 
         private struct Options
         {
-    
-            public string Prefix => "#";
+            private string _prefix;
+
+            public string Prefix
+            {
+                get => _prefix ?? "#";
+                set => _prefix = value;
+            }
         }
     }
 }
