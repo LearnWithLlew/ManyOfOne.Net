@@ -4,5 +4,7 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 .idea
+*.ncrunch*
+.vs/
 ManyOfOne.sln.DotSettings.user
 *.received.*

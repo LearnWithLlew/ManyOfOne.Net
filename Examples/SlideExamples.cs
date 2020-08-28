@@ -27,7 +27,7 @@ namespace ManyOfOne.Examples
             }
         }
 
-        [Test]
+        [Test, Ignore("samples")]
         public void Test2()
         {
             {

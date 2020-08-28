@@ -8,7 +8,7 @@ namespace ManyOfOne
         [Test]
         public void Test1()
         {
-            Assert.AreEqual("1,2,3,5,7,11,13", PrintPrimes());
+            Assert.AreEqual("1,2,3,5,7,11,13,", PrintPrimes());
         }
 
         private string PrintPrimes()
