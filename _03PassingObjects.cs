@@ -28,8 +28,10 @@ namespace ManyOfOne
             return "#" + number ;
         }
 
-        private class Options
+        private struct Options
         {
+    
+            public string Prefix => "#";
         }
     }
 }
