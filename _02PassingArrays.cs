@@ -11,11 +11,11 @@ namespace ManyOfOne
             Assert.AreEqual("#1\n", Merge("#", 1));
         }
      
-        private string Merge(string prefix, params int[] number)
+        private string Merge(string prefix, params int[] numbers) 
         {
-            return prefix + number[0] + "\n";
+            return prefix + numbers[0] + "\n";
         }
-        [Test, Ignore("Until ready")]
+       // [Test]
         public void Test2()
         {
             var expected = @"
@@ -25,7 +25,7 @@ namespace ManyOfOne
                 #4
                 #5
                 ".RemoveIndentation();
-            Assert.AreEqual(expected, Merge("#", 1 /*,2,3,4,5*/));
+            Assert.AreEqual(expected, Merge("#", 1 ,2,3,4,5));
         }
 
     }
