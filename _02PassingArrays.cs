@@ -16,12 +16,12 @@ namespace ManyOfOne
             string result = string.Empty;
             foreach (var number in numbers)
             {
-                result = prefix + number + "\n";
+                result += prefix + number + "\n";
             }
 
             return result;
         }
-       // [Test]
+        [Test]
         public void Test2()
         {
             var expected = @"
@@ -30,6 +30,7 @@ namespace ManyOfOne
                 #3
                 #4
                 #5
+
                 ".RemoveIndentation();
             Assert.AreEqual(expected, Merge("#", 1 ,2,3,4,5));
         }
