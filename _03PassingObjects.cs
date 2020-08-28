@@ -23,7 +23,7 @@ namespace ManyOfOne
             Assert.AreEqual(expected, Format(1 /*, ?*/));
         }
 
-        private string Format(int number, Options options = null)
+        private string Format(int number, Options options = default)
         {
             return "#" + number ;
         }
