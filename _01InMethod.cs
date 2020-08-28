@@ -15,7 +15,12 @@ namespace ManyOfOne
         {
             var output = "";
             var numbers = new []{1};
-            output += numbers[0] + ",";
+
+            foreach (var number in numbers)
+            {
+                output += number + ",";
+            }
+
             var number2 = 2;
             output += number2 + ",";
             var number3 = 3;
