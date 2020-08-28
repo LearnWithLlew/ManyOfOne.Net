@@ -12,8 +12,8 @@ namespace ManyOfOne
         [Test]
         public void TestFizzBuzz()
         {
-            int number = 1;
-            var result = FizzBuzz(number);
+            int[] number = new []{1};
+            var result = FizzBuzz(number[0]);
             Approvals.Verify(result);
         }
 
