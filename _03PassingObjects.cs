@@ -25,7 +25,7 @@ namespace ManyOfOne
 
         private string Format(int number, Options options = default)
         {
-            return "#" + number ;
+            return options.Prefix + number ;
         }
 
         private struct Options
