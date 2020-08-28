@@ -34,10 +34,9 @@ namespace ManyOfOne
         private string PrintNumbersUpTo7()
         {
             var output = "";
-            for (var index = 0; index < 1; ++index) 
+            for (var index = 1; index < 2; ++index) 
             {
-                var number1 = 1;
-                output += number1 + ",";
+                output += index + ",";
             }
             var number2 = 2;
             output += number2 + ",";
