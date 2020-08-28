@@ -11,9 +11,9 @@ namespace ManyOfOne
             Assert.AreEqual("#1\n", Merge("#", 1));
         }
      
-        private string Merge(string prefix, int number)
+        private string Merge(string prefix, params int[] number)
         {
-            return prefix + number + "\n";
+            return prefix + number[0] + "\n";
         }
         [Test, Ignore("Until ready")]
         public void Test2()
