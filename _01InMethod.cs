@@ -34,20 +34,10 @@ namespace ManyOfOne
         private string PrintNumbersUpTo7()
         {
             var output = "";
-            for (var number = 1; number < 3; ++number) 
+            for (var number = 1; number < 8; ++number) 
             {
                 output += number + ",";
             }
-            var number3 = 3;
-            output += number3 + ",";
-            var number4 = 4;
-            output += number4 + ",";
-            var number5 = 5;
-            output += number5 + ",";
-            var number6 = 6;
-            output += number6 + ",";
-            var number7 = 7;
-            output += number7 + ",";
             return output;
         }
         
